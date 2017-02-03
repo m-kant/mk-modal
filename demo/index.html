@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+	<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+	<!-- third-part libs -->
+	<script   src="https://code.jquery.com/jquery-2.2.3.min.js" ></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script charset='UTF-8' src='../_libs/date.format.js'></script>
+
+	<!-- MK libraries -->
+	<link rel="stylesheet" href="../_libs/mk.min.css">
+	<script charset='UTF-8' src='../_libs/mk.min.js'></script>
+
+	<!-- Helper, nav -->
+	<script charset='UTF-8' src='../!components/helpers.js'></script>
+
+	<title>$.mkmodal Demo</title>
+
+	<!-- MK debug -->
+	<script charset='UTF-8' src='../../src/js/jquery.mk.cssanim.js'></script>
+	<script charset='UTF-8' src='../../src/js/jquery.mk.modal.js'></script>
+	<link rel="stylesheet" href="../../build/css/mk.css">
+	<!--<script charset='UTF-8' src='js/autolocator.js.php'></script>-->
+	<script charset='UTF-8'>
+		opt1 = {
+			title:'$.mkmodal.open(opt)',
+			content:'test successfull'
+		}
+	</script>
+	<style>
+		#d1{
+			background: #ff0000;
+			width:100px;
+			height:20px;
+			-webkit-transition: opacity  2s linear 2s, display 0s linear 2s;  /* For Safari 3.1 to 6.0 */
+		#d1:hover{opacity:0; }
+		#d1.fade{opacity:0; }
+	</style>
+</head>
+<body>
+<div class="container">
+<div id="topNavEl"></div>
+
+
+<h2>$.mkmodal Demo</h2>
+<p>
+	mkmodal is a jQuery plugin for modal dialog window, that uses CSS animation.
+	Dialog content can be taken from string, DOM element or file via ajax.
+</p>
+<pre>
+$.mkmodal.open(options); // general form
+$.mkmodal.acquire(".dialog-content"); // take content from DOM Element
+$.mkmodal.load("dialogs/dialog.html"); // load content via AJAX
+</pre>
+<h3>normal functioning</h3>
+<div class='btn-group'>
+	<button class='btn btn-default' onclick='$.mkmodal.open(opt1)'>open modal</button>
+	<button class='btn btn-default' onclick='$.mkmodal.acquire("#cont")'>aquire modal</button>
+	<button class='btn btn-default' onclick='$.mkmodal.load("dialogs/dialog.html",{title:"$.mkmodal.load(url)"})'>load modal</button>
+</div>
+
+<h3>load delays</h3>
+<div class='btn-group'>
+	<button class='btn btn-default' onclick='$.mkmodal.load("dialogs/delay.php")'>load delay</button>
+	<button class='btn btn-default' onclick='$.mkmodal.load("dialogs/delayed-error.php")'>load delayed error</button>
+</div>
+
+<h3>modal errors</h3>
+<div class='btn-group'>
+	<button class='btn btn-default' onclick='$.mkmodal.load("not-exist-file.html")'>load error</button>
+	<button class='btn btn-default' onclick='$.mkmodal.acquire("#not-exist")'>aquire error</button>
+</div>
+<hr />
+
+<h3>block to aquire:</h3>
+<div id='cont' data-mkmodal-title='$.mkmodal.acquire(selector)'> If you see me in dialog, test is successfull
+	<div class='mkmodal-controls'><button class='mkmodal-close btn btn-default'>close</button></div></div>
+
+</div><!-- .container -->
+
+<script>
+	//$('#d1').addClass('fade');
+	$.cssanim.useAnimationEvents = false;
+</script>
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+{
+  "author": {
+	"name":"mkant",
+	"email":"mkant@list.ru",
+	"url":"http://mkant.ru"
+  },
+  "name": "mk-slidemenu",
+  "description": "Converts nested lists to sliding menu",
+  "keywords": [
+	"slidemenu",
+	"menu",
+	"navigation",
+	"UI",
+	"mobile",
+	"widget",
+	"CSS animation",
+	"list"
+  ],
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m-kant/mk-slidemenu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/m-kant/mk-slidemenu/issues"
+  },
+  "homepage": "http://mkant.ru/mink-js/mk-slidemenu/",
+  "devDependencies": {
+    "del": "^2.2.1",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-newer": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rigger": "^0.5.8",
+    "gulp-uglify": "^1.5.3",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-less": "^3.1.0"
+  }
+}
